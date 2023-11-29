@@ -1,8 +1,9 @@
-#im sorry this file the same thing over and over and over and over again
+# im sorry this file the same thing over and over and over and over again
+# https://github.com/evaan/CS1001-Bonus-Project
 
 from enum import Enum
 
-class ArmourSlot(Enum):
+class Slot(Enum):
     WEAPON = "Weapon"
     HELMET = "Helmet"
     CHEST = "Chestpiece"
@@ -22,14 +23,11 @@ class Item:
     def getDescription(self):
         return self.__description
     
-    def getClass(self):
-        return self.__class
-    
     def __str__(self):
         return f"{type(self).__name__} Stats:\nName: {self.getName()}\nDescription: {self.__description}"
     
 class Armour(Item):
-    def __init__(self, name = "Unnamed Armour Piece", description = "No Description.", meleeBonus = 0, rangedBonus = 0, mageBonus = 0, meleeDef = 0, rangedDef = 0, mageDef = 0, slot = ArmourSlot.NONE):
+    def __init__(self, name = "Unnamed Armour Piece", description = "No Description.", meleeBonus = 0, rangedBonus = 0, mageBonus = 0, meleeDef = 0, rangedDef = 0, mageDef = 0, slot = Slot.NONE):
         super().__init__(name, description)
         self.__meleeBonus = meleeBonus
         self.__rangedBonus = rangedBonus
@@ -267,10 +265,10 @@ class Healer(Character):
 
 def main():
     #test code
-    wizardsHat = Armour("Wizard's Hat", "A magical hat rumoured to boost magical spells", mageBonus=30, slot=ArmourSlot.HELMET)
-    dinhsBulwark = Armour("Dinh's Bulwark", "A two-handed shield created by Dinh", meleeDef=300, rangedDef=400, slot=ArmourSlot.WEAPON)
-    wisconsinPlatebody = Armour("Wisconsin Platebody", "Armour once worn by a powerful ranger", rangedBonus=100, slot=ArmourSlot.CHEST)
-    infernalCape = Armour("Infernal Cape", "A cape awarded to the most talented of warriors", meleeBonus=10, slot=ArmourSlot.CAPE)
+    wizardsHat = Armour("Wizard's Hat", "A magical hat rumoured to boost magical spells", mageBonus=30, slot=Slot.HELMET)
+    dinhsBulwark = Armour("Dinh's Bulwark", "A two-handed shield created by Dinh", meleeDef=300, rangedDef=400, slot=Slot.WEAPON)
+    wisconsinPlatebody = Armour("Wisconsin Platebody", "Armour once worn by a powerful ranger", rangedBonus=100, slot=Slot.CHEST)
+    infernalCape = Armour("Infernal Cape", "A cape awarded to the most talented of warriors", meleeBonus=10, slot=Slot.CAPE)
     joe = Healer("Joe")
     joe.addItem(wizardsHat)
     joe.addItem(infernalCape)
