@@ -250,10 +250,10 @@ class Archer(Character):
 
     def specialAttack(self):
         print(f"{self.getName()} Focusses on their attacks!")
-        self.boostRanged(12)
+        self.boostRanged(13)
 
 class Healer(Character):
-    def __init__(self, name = "Healer", hitpoints = 300, melee = 30, ranged = 1, magic = 1):
+    def __init__(self, name = "Healer", hitpoints = 300, melee = 1, ranged = 1, magic = 112):
         super().__init__(name, hitpoints, melee, ranged, magic)
 
     def specialAttack(self):
